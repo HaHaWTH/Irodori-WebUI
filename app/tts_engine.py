@@ -161,7 +161,7 @@ def resolve_checkpoint(value: str) -> str:
         path = Path(value).expanduser()
         if not path.is_file():
             raise ValueError(f"Model checkpoint not found: {path}")
-        return str(path.resolve())
+        return str(path.absolute())
     return hf_hub_download(repo_id=value, filename="model.safetensors", local_files_only=True)
 
 

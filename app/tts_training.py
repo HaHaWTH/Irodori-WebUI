@@ -95,7 +95,7 @@ def read_model_config(checkpoint: str) -> tuple[str, dict]:
         if model is None:
             raise ValueError("The checkpoint does not contain model_config.")
     ModelConfig(**model)
-    return str(path.resolve()), model
+    return str(path.absolute()), model
 
 
 def validate_manifest(value: str, max_frames: int) -> Path:
@@ -185,7 +185,7 @@ def training_config(settings: TrainingSettings) -> tuple[str, Path, dict]:
     }
     continuation = clean_path(settings.continuation)
     if continuation:
-        path = Path(continuation).expanduser().resolve()
+        path = Path(continuation).expanduser().absolute()
         if speaker:
             from irodori_tts.speaker_inversion import load_speaker_inversion_payload
             embedding = load_speaker_inversion_payload(path)["speaker_embedding"]
