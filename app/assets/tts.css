@@ -1,0 +1,65 @@
+.gradio-container {
+    width: 100% !important;
+    max-width: 1380px !important;
+    margin: 0 auto !important;
+    padding: 26px 28px 36px !important;
+    font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+}
+.gradio-container > .main { width: 100% !important; max-width: none !important; padding: 0 !important; }
+.gradio-container :is(input, textarea, button, select, table, th, td) { font-family: inherit; }
+.gradio-container :is(input, textarea) { line-height: 1.65; }
+.gradio-container textarea::placeholder { opacity: .6; }
+.gradio-container button { transition: background-color .15s ease, border-color .15s ease; }
+.gradio-container button:disabled { opacity: .45; cursor: not-allowed; }
+.gradio-container .tab-nav { border-bottom: 1px solid var(--border-color-primary); gap: 8px; }
+.gradio-container .tab-nav button { padding: 10px 17px; border-radius: 7px 7px 0 0; }
+.gradio-container .tab-nav button.selected { color: var(--color-accent); font-weight: 600; }
+.gradio-container .tabitem { padding: 18px 0 0; border: 0; }
+#app-header { padding: 0 0 5px; }
+.app-heading { display: flex; align-items: center; gap: 12px; height: 40px; }
+.app-mark { width: 32px; height: 32px; color: #6aa4e8; }
+.app-heading h1 { margin: 0; font-size: 23px; font-weight: 650; letter-spacing: -.5px; }
+#voice-strip { gap: 16px; align-items: stretch; }
+#voice-controls { flex-grow: 1; }
+#voice-select-row { align-items: end; gap: 8px; }
+#voice-refresh { flex: 0 0 72px; margin-bottom: 14px; margin-right: 14px; min-height: 40px; }
+#editor-column { min-width: min(580px, 100%) !important; }
+#output-column { min-width: min(340px, 100%) !important; }
+#script-tabs .tabitem { padding-top: 14px; }
+#single-text textarea { min-height: 214px; }
+#batch-input textarea { min-height: 90px; }
+#queue-table table { font-size: 14px; }
+#queue-table th { font-weight: 500; }
+#queue-table :is(th, td) { min-width: 64px; }
+#queue-table textarea { line-height: 1.6; }
+#batch-toolbar { align-items: center; }
+#add-lines { margin: 0 14px 0 0; }
+.section-title { font-size: 14px; font-weight: 600; margin: 0; color: var(--body-text-color); }
+.run-status { border: 1px solid var(--border-color-primary); border-radius: 10px; padding: 14px 16px; background: var(--block-background-fill); }
+.run-status-line { display: flex; align-items: center; gap: 9px; min-height: 22px; }
+.run-status-line strong { margin-left: auto; font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums; color: var(--body-text-color-subdued); }
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: #7c899b; flex: 0 0 auto; }
+.run-status[data-phase="running"] .status-dot, .run-status[data-phase="loading"] .status-dot { background: #65a5ef; }
+.run-status[data-phase="finished"] .status-dot { background: #62b49e; }
+.run-status[data-phase="error"] .status-dot { background: #dd8c84; }
+.run-track { height: 3px; border-radius: 3px; background: var(--background-fill-secondary); margin-top: 12px; overflow: hidden; }
+.run-track span { display: block; height: 100%; background: #5797df; transition: width .25s ease; }
+#audio-preview { min-height: 156px; }
+#audio-preview .empty { min-height: 100px; }
+#download-row { gap: 10px; }
+#runtime-log textarea { font-family: "Cascadia Code", Consolas, monospace; font-size: 12px; }
+#voice-upload { min-height: 192px; }
+#voice-upload .wrap { min-height: 150px; }
+#voice-library table { font-size: 13px; }
+.gradio-container .path-row { align-items: end; gap: 8px; }
+.gradio-container .path-button { min-height: 42px; margin-bottom: 14px; white-space: nowrap; }
+.gradio-container footer { display: none !important; }
+@media (max-width: 800px) {
+    .gradio-container { padding: 16px 12px 28px !important; }
+    .app-heading h1 { font-size: 21px; }
+    .gradio-container .tab-nav { gap: 1px; }
+    .gradio-container .tab-nav button { padding: 9px 12px; }
+    #voice-strip { gap: 12px; }
+    #voice-refresh { margin-bottom: 14px; }
+}
