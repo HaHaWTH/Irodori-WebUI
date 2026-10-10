@@ -14,6 +14,7 @@ from tts_engine import (
     export_rows, import_rows, import_voice, normalize_rows, split_text, voice_choices,
 )
 from tts_theme import CSS, make_theme
+from tts_emoji import build_emoji_picker
 from tts_paths import path_field
 from tts_training import GPU_LOCK
 from training_ui import build_training_tab
@@ -255,6 +256,7 @@ def build_ui():
                                             import_table = gr.Button("导入台词", interactive=False)
                                             export_table = gr.Button("导出台词")
                                             table_download = gr.File(label="台词文件", interactive=False)
+                        build_emoji_picker()
                         with gr.Accordion("生成参数", open=False):
                             with gr.Row():
                                 steps = gr.Slider(10, 80, value=40, step=1, label="采样步数", info="步数越多 生成耗时越长")
